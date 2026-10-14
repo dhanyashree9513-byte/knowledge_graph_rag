@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+*.key
+
+# Data (raw corpus and caches stay local)
+data/raw/*
+!data/raw/.gitkeep
+data/cache/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
