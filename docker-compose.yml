@@ -1,0 +1,39 @@
+# Local databases for the project. Start: docker compose up -d   Stop: docker compose down
+# Passwords come from .env (docker compose reads it automatically).
+# Named volumes keep data when containers are removed; `docker compose down -v` deletes it.
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: kgrag-neo4j
+    ports:
+      - "7474:7474" # browser UI: http://localhost:7474
+      - "7687:7687" # bolt protocol, used by the Python driver
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD}
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:7474 || exit 1"]
+      interval: 5s
+      retries: 20
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: kgrag-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: kgrag
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d kgrag"]
+      interval: 5s
+      retries: 20
+
+volumes:
+  neo4j_data:
+  pg_data:
