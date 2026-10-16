@@ -120,3 +120,151 @@ Postgres followed the same steps (image `pgvector/pgvector:pg16`, port 5432), pl
 
 ### Interview line
 "Every LLM call goes through one wrapper that returns token usage, so I can estimate cost before batch runs. Before any pipeline run, a readiness check confirms Neo4j and Postgres are up, so failures are one clear line instead of a mid-run crash."
+
+---
+
+## Concepts: Docker, YAML, docker-compose (explained simply)
+
+### Docker: why
+Installing a database directly on my Mac is messy: versions clash, settings scatter, and uninstalling is hard. Docker runs each program in a sealed box called a **container**.
+
+| Word | Simple meaning | Example |
+|---|---|---|
+| **Image** | A packaged, ready-to-run program (like an installer) | `neo4j:5-community` |
+| **Container** | A running copy of an image (like an installed, open app) | `kgrag-neo4j` |
+| **Volume** | A folder on my disk that the container saves its data into | `neo4j_data` |
+| **Port** | A door from my Mac into the container | `7474:7474` |
+
+Delete a container and its data is gone, unless the data lives in a volume.
+
+### YAML: what it is
+YAML is a plain-text format for settings. Only a few rules:
+```yaml
+name: value          # key, colon, SPACE, value
+parent:
+  child: value       # indentation (2 spaces) = "belongs to"
+list:
+  - first item       # dash = list item
+  - second item
+# a comment
+```
+- **Spaces only, never tabs.** Wrong indentation is the most common YAML error.
+- Always a space after the colon: `image: neo4j`, not `image:neo4j`.
+
+### docker-compose.yml: why we need it
+Without it, each database needs a long command typed every time:
+```
+docker run -d --name kgrag-neo4j -p 7474:7474 -p 7687:7687 -e NEO4J_AUTH=neo4j/secret -v neo4j_data:/data neo4j:5-community
+```
+With it, I write those settings **once** in a file, commit it to git, and start everything with **one** command. Anyone who clones the repo gets the same setup.
+
+### How to write it: each line maps to part of that long command
+```yaml
+services:                         # the programs to run
+  neo4j:                          # my name for this service
+    image: neo4j:5-community      # which image            (docker run ... neo4j:5-community)
+    container_name: kgrag-neo4j   # fixed container name   (--name kgrag-neo4j)
+    ports:
+      - "7474:7474"               # Mac:container, browser (-p 7474:7474)
+      - "7687:7687"               # Mac:container, Python  (-p 7687:7687)
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD}   # setting; ${...} is read from .env  (-e ...)
+    volumes:
+      - neo4j_data:/data          # save /data into the volume  (-v neo4j_data:/data)
+    healthcheck:                  # how Docker knows it's READY, not just started
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:7474 || exit 1"]
+      interval: 5s
+      retries: 20
+
+volumes:                          # declare the volumes used above
+  neo4j_data:
+```
+Where the values come from: the **image name** from Docker Hub (hub.docker.com), and the **ports, environment variables and data folder** from that image's documentation.
+
+### How to use it
+
+| When | Command |
+|---|---|
+| Start of session | `docker compose up -d` (`-d` = run in background) |
+| Is it ready? | `docker compose ps` → wait for `(healthy)` |
+| Something's wrong | `docker compose logs neo4j` |
+| End of session | `docker compose down` (containers removed, data kept) |
+| Wipe all data | `docker compose down -v` (careful: deletes volumes) |
+
+Run these inside the project folder, where `docker-compose.yml` lives.
+
+### Adding a new service later (e.g. Redis in Project 2)
+Same pattern: add a block under `services:`.
+```yaml
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+```
+Then `docker compose up -d` starts only what's new.
+
+---
+
+## Day 2 (part 2) · Downloading the 10-Ks (2026-10-15)
+
+**What:** `src/download_10k.py` gets the latest 10-K of NVIDIA, AMD and Intel from SEC EDGAR and keeps only Item 1 (Business) and Item 1A (Risk Factors). Output: `data/raw/<ticker>.json`.
+
+**How, in 5 steps:**
+1. Ask SEC's free API (`data.sec.gov/submissions/CIK….json`) for the newest 10-K. SEC uses a number called the **CIK**, not the ticker.
+2. Download the HTML once; re-runs use the cached file.
+3. Strip HTML to plain text (BeautifulSoup); drop hidden XBRL data (`ix:header`).
+4. Cut out the two sections with regexes that only match **at the start of a line**, so a mid-sentence "see Item 1A" doesn't count.
+5. Save the sections with `accession`, `filing_date` and `url` (provenance: every answer can be traced to the exact filing).
+
+**What broke: Intel.** The size check printed ⚠ (Item 1 = 160 chars). Intel files its 10-K as an annual report: no "Item 1." headings in the body, only a cross-reference index at the end. I looked at the text first, then:
+- gave Intel its own heading patterns ("Overview" → "Management's Discussion and Analysis"; "Risk Factors" → "Other Key Information"),
+- changed the rule from "longest span" to "**first span over 5,000 chars**", because MD&A has its own "Overview" that won the longest-span contest,
+- re-ran NVIDIA and AMD to confirm their numbers didn't change.
+
+**Lesson:** parsers fail silently. Add a sanity check (here: section size) and look at the real data before changing code.
+
+**Result:** ~533k characters (~130k tokens). NVDA 48k + 115k, AMD 60k + 132k, INTC 82k + 96k chars.
+
+---
+
+## Day 3 · Chunking with stable ids (2026-10-16)
+
+**What:** `src/chunk.py` turns the 6 sections into **334 chunks** in `data/chunks.jsonl` (one JSON per line).
+
+A chunk:
+```json
+{
+  "chunk_id": "NVDA-10K-2026-02-25-6637efa5bd47",
+  "doc_id": "NVDA-10K-2026-02-25",
+  "doc_hash": "d61ada10…",
+  "ticker": "NVDA",
+  "section": "item_1",
+  "section_path": ["NVDA-10K-2026-02-25", "Item 1 Business", "Manufacturing"],
+  "position": 19,
+  "text": "… We utilize foundries, such as … TSMC, and … Samsung …"
+}
+```
+
+**How, in 4 steps:**
+1. **Clean:** drop page junk ("Table of Contents", page numbers), attach bullets to their text, rejoin sentences the HTML split.
+2. **Cut:** pack whole paragraphs up to ~600 tokens (2,400 chars). A heading always starts a new chunk; long paragraphs split only at sentence ends.
+3. **Label:**
+   - `chunk_id` = doc id + hash of the chunk's **text**, not its position, so ids don't shift when the document changes. Graph edges (Day 6) and vectors (Day 7) point at these ids.
+   - `doc_hash` = fingerprint of the report; Day 4 skips re-extraction (and its cost) if it hasn't changed.
+   - `section_path` = where the text came from, for filters and citations.
+4. **Save** to `data/chunks.jsonl` (gitignored: rebuildable from the raw data).
+
+**Bugs found by reading the output:**
+- a chunk that was just `"ITEM 1."` (AMD's heading ends with a period) → added to the noise list,
+- a chunk that was just `"®"` (Intel puts it on its own line: "Intel / ® / Xeon") → joined back into "Intel® Xeon".
+
+**Checks:** running twice gives a byte-identical file; all ids unique (the script asserts it).
+
+### How to choose chunk size, overlap and metadata
+- **Size follows the job.** LLM extraction: 400–800 tokens. Vector search: 200–500 (one topic per chunk = a sharp embedding). Too small loses context and costs more calls; too big blurs topics and the extractor misses facts. I chose ~600 for both.
+- **Overlap** (repeat 10–20% of the previous chunk) protects facts cut at a boundary, but costs tokens and creates duplicates. I use **none**, because I cut at headings and paragraphs, never blindly every N characters.
+- **Where to cut, best first:** headings → paragraphs → sentences → never every N characters.
+- **Metadata:** each field needs a future user. `chunk_id` (graph + vectors), `doc_id` (citations), `doc_hash` (cache), `ticker` and `section` (filters), `position` (reading order).
+- **Measure, don't guess:** Day 5 measures recall@k on labeled questions; if it's low, change the size and re-measure.
+
+**Interview line:** "I chunk on document structure, not fixed character counts, and ids come from content hashes so graph edges and vectors stay valid when documents change."
