@@ -4,10 +4,13 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
     "beautifulsoup4>=4.15.0",
+    "fastapi>=0.143.3",
     "httpx>=0.28.1",
     "neo4j>=6.4.0",
+    "numpy>=2.5.4",
     "openai>=3.31.0",
     "pgvector>=0.5.1",
     "psycopg[binary]>=3.3.6",
     "python-dotenv>=1.2.4",
+    "uvicorn>=0.54.0",
 ]

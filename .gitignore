@@ -15,6 +15,9 @@ data/raw/*
 !data/raw/.gitkeep
 data/cache/
 data/chunks.jsonl
+data/extractions.jsonl
+data/graph.json
+data/logs/
 
 # OS / editor
 .DS_Store

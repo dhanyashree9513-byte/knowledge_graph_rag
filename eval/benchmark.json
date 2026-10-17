@@ -1,0 +1,642 @@
+[
+ {
+  "id": 1,
+  "type": "1-hop",
+  "question": "Who is NVIDIA's chief financial officer?",
+  "must": [
+   [
+    "kress"
+   ]
+  ]
+ },
+ {
+  "id": 2,
+  "type": "1-hop",
+  "question": "Who co-founded NVIDIA and serves as its CEO?",
+  "must": [
+   [
+    "huang"
+   ]
+  ]
+ },
+ {
+  "id": 3,
+  "type": "1-hop",
+  "question": "Where is NVIDIA headquartered?",
+  "must": [
+   [
+    "santa clara"
+   ]
+  ]
+ },
+ {
+  "id": 4,
+  "type": "1-hop",
+  "question": "Where are AMD's executive offices located?",
+  "must": [
+   [
+    "santa clara",
+    "augustine"
+   ]
+  ]
+ },
+ {
+  "id": 5,
+  "type": "1-hop",
+  "question": "Which company is the sole supplier of Intel's EUV lithography tools?",
+  "must": [
+   [
+    "asml"
+   ]
+  ]
+ },
+ {
+  "id": 6,
+  "type": "1-hop",
+  "question": "How many gigawatts of AMD GPUs did OpenAI agree to deploy?",
+  "must": [
+   [
+    "6 gigawatt",
+    "six gigawatt",
+    "6-gigawatt",
+    "6 gw"
+   ]
+  ]
+ },
+ {
+  "id": 7,
+  "type": "1-hop",
+  "question": "In what year did NVIDIA acquire Mellanox?",
+  "must": [
+   [
+    "2020"
+   ]
+  ]
+ },
+ {
+  "id": 8,
+  "type": "1-hop",
+  "question": "Which generations of Intel Core desktop processors had instability issues?",
+  "must": [
+   [
+    "13"
+   ],
+   [
+    "14"
+   ]
+  ]
+ },
+ {
+  "id": 9,
+  "type": "1-hop",
+  "question": "In which country did Intel discontinue a planned fab expansion?",
+  "must": [
+   [
+    "germany"
+   ]
+  ]
+ },
+ {
+  "id": 10,
+  "type": "1-hop",
+  "question": "Which foundries produce wafers for AMD's HPC products?",
+  "must": [
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ],
+   [
+    "globalfoundries",
+    "gf"
+   ]
+  ]
+ },
+ {
+  "id": 11,
+  "type": "1-hop",
+  "question": "Which game consoles are powered by AMD semi-custom SoCs?",
+  "must": [
+   [
+    "playstation",
+    "sony"
+   ],
+   [
+    "xbox",
+    "microsoft"
+   ]
+  ]
+ },
+ {
+  "id": 12,
+  "type": "1-hop",
+  "question": "Who are AMD's primary FPGA competitors?",
+  "must": [
+   [
+    "altera"
+   ],
+   [
+    "lattice"
+   ]
+  ]
+ },
+ {
+  "id": 13,
+  "type": "1-hop",
+  "question": "In which countries are Intel's key assembly and test facilities?",
+  "must": [
+   [
+    "vietnam"
+   ],
+   [
+    "malaysia"
+   ]
+  ]
+ },
+ {
+  "id": 14,
+  "type": "1-hop",
+  "question": "What production milestone did Intel 18A reach in 2025?",
+  "must": [
+   [
+    "high-volume",
+    "high volume"
+   ]
+  ]
+ },
+ {
+  "id": 15,
+  "type": "1-hop",
+  "question": "What may Intel do if it can't secure a significant external customer for Intel 14A?",
+  "must": [
+   [
+    "pause",
+    "discontinu"
+   ]
+  ]
+ },
+ {
+  "id": 16,
+  "type": "1-hop",
+  "question": "Where is NVIDIA's supply chain mainly concentrated?",
+  "must": [
+   [
+    "asia"
+   ]
+  ]
+ },
+ {
+  "id": 17,
+  "type": "1-hop",
+  "question": "Which hyperscalers develop their own custom silicon that competes with Intel?",
+  "must": [
+   [
+    "amazon"
+   ],
+   [
+    "google"
+   ],
+   [
+    "meta"
+   ],
+   [
+    "microsoft"
+   ]
+  ]
+ },
+ {
+  "id": 18,
+  "type": "1-hop",
+  "question": "Who performs most of AMD's product assembly and final testing?",
+  "must": [
+   [
+    "third-party",
+    "third party"
+   ]
+  ]
+ },
+ {
+  "id": 19,
+  "type": "1-hop",
+  "question": "Who is AMD's primary competitor in CPUs and APUs?",
+  "must": [
+   [
+    "intel"
+   ]
+  ]
+ },
+ {
+  "id": 20,
+  "type": "1-hop",
+  "question": "About how many employees did NVIDIA have at the end of fiscal year 2026?",
+  "must": [
+   [
+    "42,000",
+    "42000"
+   ]
+  ]
+ },
+ {
+  "id": 21,
+  "type": "1-hop",
+  "question": "About how many employees does AMD have?",
+  "must": [
+   [
+    "31,000",
+    "31000"
+   ]
+  ]
+ },
+ {
+  "id": 22,
+  "type": "1-hop",
+  "question": "What percentage of Altera did Intel divest in 2025?",
+  "must": [
+   [
+    "51"
+   ]
+  ]
+ },
+ {
+  "id": 23,
+  "type": "1-hop",
+  "question": "Which company did AMD acquire in March 2025?",
+  "must": [
+   [
+    "zt"
+   ]
+  ]
+ },
+ {
+  "id": 24,
+  "type": "1-hop",
+  "question": "Who is NVIDIA's General Counsel?",
+  "must": [
+   [
+    "teter"
+   ]
+  ]
+ },
+ {
+  "id": 25,
+  "type": "1-hop",
+  "question": "Who runs NVIDIA's worldwide field operations?",
+  "must": [
+   [
+    "puri"
+   ]
+  ]
+ },
+ {
+  "id": 26,
+  "type": "1-hop",
+  "question": "Which Intel business is headquartered in Israel?",
+  "must": [
+   [
+    "mobileye"
+   ]
+  ]
+ },
+ {
+  "id": 27,
+  "type": "2-hop",
+  "question": "Which supplier do NVIDIA and AMD share?",
+  "must": [
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ],
+   [
+    "samsung"
+   ]
+  ]
+ },
+ {
+  "id": 28,
+  "type": "2-hop",
+  "question": "Which company do both NVIDIA and AMD name as a competitor?",
+  "must": [
+   [
+    "intel"
+   ]
+  ]
+ },
+ {
+  "id": 29,
+  "type": "2-hop",
+  "question": "Which company is named as a competitor by both AMD and Intel?",
+  "must": [
+   [
+    "nvidia"
+   ]
+  ]
+ },
+ {
+  "id": 30,
+  "type": "2-hop",
+  "question": "Which of AMD's wafer suppliers does Intel name as its primary foundry competitor?",
+  "must": [
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ]
+  ]
+ },
+ {
+  "id": 31,
+  "type": "2-hop",
+  "question": "Who is the CFO of the company that acquired Mellanox?",
+  "must": [
+   [
+    "kress"
+   ]
+  ]
+ },
+ {
+  "id": 32,
+  "type": "2-hop",
+  "question": "Where is the company that agreed to supply OpenAI with 6 gigawatts of GPUs headquartered?",
+  "must": [
+   [
+    "santa clara"
+   ]
+  ]
+ },
+ {
+  "id": 33,
+  "type": "2-hop",
+  "question": "Which risk related to exports do NVIDIA and Intel both face?",
+  "must": [
+   [
+    "export"
+   ]
+  ]
+ },
+ {
+  "id": 34,
+  "type": "2-hop",
+  "question": "Which export-related risk do AMD and NVIDIA both face?",
+  "must": [
+   [
+    "export"
+   ]
+  ]
+ },
+ {
+  "id": 35,
+  "type": "2-hop",
+  "question": "Which game console makers buy chips from the company whose primary CPU competitor is Intel?",
+  "must": [
+   [
+    "sony"
+   ],
+   [
+    "microsoft"
+   ]
+  ]
+ },
+ {
+  "id": 36,
+  "type": "2-hop",
+  "question": "Which processor architecture do AMD and Intel both build on?",
+  "must": [
+   [
+    "x86"
+   ]
+  ]
+ },
+ {
+  "id": 37,
+  "type": "2-hop",
+  "question": "Which competitor did Intel announce a strategic partnership with to co-develop products?",
+  "must": [
+   [
+    "nvidia"
+   ]
+  ]
+ },
+ {
+  "id": 38,
+  "type": "2-hop",
+  "question": "Which of NVIDIA's wafer suppliers does Intel say it may shift manufacturing to?",
+  "must": [
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ]
+  ]
+ },
+ {
+  "id": 39,
+  "type": "2-hop",
+  "question": "Where is the company whose CFO is Colette Kress headquartered?",
+  "must": [
+   [
+    "santa clara"
+   ]
+  ]
+ },
+ {
+  "id": 40,
+  "type": "2-hop",
+  "question": "Where is the supply chain of the company co-founded by Jen-Hsun Huang concentrated?",
+  "must": [
+   [
+    "asia"
+   ]
+  ]
+ },
+ {
+  "id": 41,
+  "type": "3-hop",
+  "question": "Which foundry supplies or manufactures for all three of NVIDIA, AMD and Intel?",
+  "must": [
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ]
+  ]
+ },
+ {
+  "id": 42,
+  "type": "3-hop",
+  "question": "Who is the CFO of the company that shares the supplier Samsung with AMD?",
+  "must": [
+   [
+    "kress"
+   ]
+  ]
+ },
+ {
+  "id": 43,
+  "type": "3-hop",
+  "question": "Which company acquired Mellanox, and which wafer supplier does it share with AMD?",
+  "must": [
+   [
+    "nvidia"
+   ],
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ]
+  ]
+ },
+ {
+  "id": 44,
+  "type": "3-hop",
+  "question": "Which company supplies both AMD and NVIDIA and is also Intel's primary foundry competitor?",
+  "must": [
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ]
+  ]
+ },
+ {
+  "id": 45,
+  "type": "3-hop",
+  "question": "Who is the CFO of the company AMD names as a data center competitor alongside Intel?",
+  "must": [
+   [
+    "kress"
+   ]
+  ]
+ },
+ {
+  "id": 46,
+  "type": "aggregation",
+  "question": "How many suppliers do NVIDIA and AMD have in common, and who are they?",
+  "must": [
+   [
+    "2",
+    "two"
+   ],
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ],
+   [
+    "samsung"
+   ]
+  ]
+ },
+ {
+  "id": 47,
+  "type": "aggregation",
+  "question": "Which of NVIDIA, AMD and Intel name Qualcomm as a competitor?",
+  "must": [
+   [
+    "nvidia"
+   ],
+   [
+    "intel"
+   ]
+  ]
+ },
+ {
+  "id": 48,
+  "type": "aggregation",
+  "question": "Which risk do NVIDIA, AMD and Intel all face?",
+  "must": [
+   [
+    "export"
+   ]
+  ]
+ },
+ {
+  "id": 49,
+  "type": "aggregation",
+  "question": "List all the foundries AMD uses.",
+  "must": [
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ],
+   [
+    "globalfoundries",
+    "gf"
+   ],
+   [
+    "umc",
+    "united microelectronics"
+   ],
+   [
+    "samsung"
+   ]
+  ]
+ },
+ {
+  "id": 50,
+  "type": "aggregation",
+  "question": "List all of NVIDIA's executive officers.",
+  "must": [
+   [
+    "huang"
+   ],
+   [
+    "kress"
+   ],
+   [
+    "puri"
+   ],
+   [
+    "shoquist"
+   ],
+   [
+    "teter"
+   ]
+  ]
+ },
+ {
+  "id": 51,
+  "type": "aggregation",
+  "question": "How many executive officers does NVIDIA list?",
+  "must": [
+   [
+    "5",
+    "five"
+   ]
+  ]
+ },
+ {
+  "id": 52,
+  "type": "out_of_scope",
+  "question": "What was Apple's revenue last year?",
+  "must": []
+ },
+ {
+  "id": 53,
+  "type": "out_of_scope",
+  "question": "Who is the CEO of Tesla?",
+  "must": []
+ },
+ {
+  "id": 54,
+  "type": "out_of_scope",
+  "question": "What is NVIDIA's stock price today?",
+  "must": []
+ },
+ {
+  "id": 55,
+  "type": "out_of_scope",
+  "question": "How many employees does Samsung have?",
+  "must": []
+ },
+ {
+  "id": 56,
+  "type": "out_of_scope",
+  "question": "What will the weather be in Santa Clara tomorrow?",
+  "must": []
+ },
+ {
+  "id": 57,
+  "type": "out_of_scope",
+  "question": "What was AMD's revenue in 1999?",
+  "must": []
+ },
+ {
+  "id": 58,
+  "type": "out_of_scope",
+  "question": "What did Qualcomm report about Snapdragon sales in its own 10-K?",
+  "must": []
+ }
+]

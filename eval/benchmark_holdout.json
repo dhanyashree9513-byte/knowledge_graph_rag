@@ -1,0 +1,199 @@
+[
+ {
+  "id": 100,
+  "type": "1-hop",
+  "question": "Which AMD Instinct GPU series did hyperscalers deploy in 2025?",
+  "must": [
+   [
+    "mi350"
+   ]
+  ]
+ },
+ {
+  "id": 101,
+  "type": "1-hop",
+  "question": "In what year did NVIDIA launch the Blackwell architecture?",
+  "must": [
+   [
+    "2024"
+   ]
+  ]
+ },
+ {
+  "id": 102,
+  "type": "1-hop",
+  "question": "When was NVIDIA first incorporated in California?",
+  "must": [
+   [
+    "1993"
+   ]
+  ]
+ },
+ {
+  "id": 103,
+  "type": "1-hop",
+  "question": "What is the brand name of AMD's DPUs?",
+  "must": [
+   [
+    "pensando"
+   ]
+  ]
+ },
+ {
+  "id": 104,
+  "type": "1-hop",
+  "question": "How many days per week are Intel employees generally expected to be on-site?",
+  "must": [
+   [
+    "four",
+    "4"
+   ]
+  ]
+ },
+ {
+  "id": 105,
+  "type": "1-hop",
+  "question": "With which company does AMD have ATMP joint ventures?",
+  "must": [
+   [
+    "tongfu"
+   ]
+  ]
+ },
+ {
+  "id": 106,
+  "type": "2-hop",
+  "question": "Who is the general counsel of the company that launched the Blackwell architecture?",
+  "must": [
+   [
+    "teter"
+   ]
+  ]
+ },
+ {
+  "id": 107,
+  "type": "2-hop",
+  "question": "Where is the company that makes Pensando DPUs headquartered?",
+  "must": [
+   [
+    "santa clara"
+   ]
+  ]
+ },
+ {
+  "id": 108,
+  "type": "2-hop",
+  "question": "Which company that makes EPYC server processors uses UMC to produce chips?",
+  "must": [
+   [
+    "amd",
+    "advanced micro"
+   ]
+  ]
+ },
+ {
+  "id": 109,
+  "type": "2-hop",
+  "question": "Besides TSMC and Samsung, which of AMD's wafer suppliers does Intel name as a foundry competitor?",
+  "must": [
+   [
+    "globalfoundries",
+    "umc"
+   ]
+  ]
+ },
+ {
+  "id": 110,
+  "type": "2-hop",
+  "question": "Which company, named as a competitor by NVIDIA, makes Snapdragon products?",
+  "must": [
+   [
+    "qualcomm"
+   ]
+  ]
+ },
+ {
+  "id": 111,
+  "type": "2-hop",
+  "question": "Who is the chief financial officer of the company that makes Blackwell GPUs?",
+  "must": [
+   [
+    "kress"
+   ]
+  ]
+ },
+ {
+  "id": 112,
+  "type": "3-hop",
+  "question": "Which wafer supplier does the company that makes Ryzen processors share with the company that makes Blackwell GPUs?",
+  "must": [
+   [
+    "tsmc",
+    "taiwan semiconductor"
+   ]
+  ]
+ },
+ {
+  "id": 113,
+  "type": "3-hop",
+  "question": "Who is the CEO of the company that acquired Mellanox and shares TSMC as a supplier with AMD?",
+  "must": [
+   [
+    "huang"
+   ]
+  ]
+ },
+ {
+  "id": 114,
+  "type": "aggregation",
+  "question": "Which of NVIDIA, AMD and Intel rely on TSMC for manufacturing?",
+  "must": [
+   [
+    "nvidia"
+   ],
+   [
+    "amd"
+   ],
+   [
+    "intel"
+   ]
+  ]
+ },
+ {
+  "id": 115,
+  "type": "aggregation",
+  "question": "Which NVIDIA executive officers joined the company in 2005 or later?",
+  "must": [
+   [
+    "puri"
+   ],
+   [
+    "shoquist"
+   ],
+   [
+    "kress"
+   ],
+   [
+    "teter"
+   ]
+  ]
+ },
+ {
+  "id": 116,
+  "type": "out_of_scope",
+  "question": "What is Meta's capital expenditure plan for next year?",
+  "must": []
+ },
+ {
+  "id": 117,
+  "type": "out_of_scope",
+  "question": "When will NVIDIA announce its next quarterly earnings?",
+  "must": []
+ },
+ {
+  "id": 118,
+  "type": "out_of_scope",
+  "question": "What is the salary of Arm's CEO?",
+  "must": []
+ }
+]

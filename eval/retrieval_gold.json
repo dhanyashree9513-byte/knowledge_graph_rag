@@ -1,0 +1,197 @@
+[
+ {
+  "question": "Who manufactures NVIDIA's semiconductor wafers?",
+  "type": "1-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-6637efa5bd47"
+  ]
+ },
+ {
+  "question": "Which foundries does AMD use to produce its wafers?",
+  "type": "1-hop",
+  "gold": [
+   "AMD-10K-2026-02-04-253ca06db1dd",
+   "AMD-10K-2026-02-04-62ba6e46faf0",
+   "AMD-10K-2026-02-04-0baed941bc19"
+  ]
+ },
+ {
+  "question": "Which supplier do NVIDIA and AMD share?",
+  "type": "2-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-6637efa5bd47",
+   "AMD-10K-2026-02-04-253ca06db1dd",
+   "AMD-10K-2026-02-04-62ba6e46faf0",
+   "AMD-10K-2026-02-04-0baed941bc19"
+  ]
+ },
+ {
+  "question": "Who is NVIDIA's chief financial officer?",
+  "type": "1-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-a510b6e98791"
+  ]
+ },
+ {
+  "question": "Who founded NVIDIA and is its CEO?",
+  "type": "1-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-a510b6e98791"
+  ]
+ },
+ {
+  "question": "Where is NVIDIA headquartered?",
+  "type": "1-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-ada5ad38c0fc"
+  ]
+ },
+ {
+  "question": "Where are AMD's executive offices?",
+  "type": "1-hop",
+  "gold": [
+   "AMD-10K-2026-02-04-2166d751ecab",
+   "AMD-10K-2026-02-04-9d862d7f2309"
+  ]
+ },
+ {
+  "question": "Which company supplies Intel's EUV lithography tools?",
+  "type": "1-hop",
+  "gold": [
+   "INTC-10K-2026-01-23-28e42dbad244",
+   "INTC-10K-2026-01-23-dbbce50149a5"
+  ]
+ },
+ {
+  "question": "What agreement did AMD sign with OpenAI?",
+  "type": "1-hop",
+  "gold": [
+   "AMD-10K-2026-02-04-cb6f1e0371da"
+  ]
+ },
+ {
+  "question": "When did NVIDIA acquire Mellanox?",
+  "type": "1-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-b310b8330f93"
+  ]
+ },
+ {
+  "question": "What instability issues affected Intel Core desktop processors?",
+  "type": "1-hop",
+  "gold": [
+   "INTC-10K-2026-01-23-0af03a60837c"
+  ]
+ },
+ {
+  "question": "What happened to Intel's planned expansion in Germany?",
+  "type": "1-hop",
+  "gold": [
+   "INTC-10K-2026-01-23-0fcfb8dbb58a",
+   "INTC-10K-2026-01-23-1b50dd4575b4",
+   "INTC-10K-2026-01-23-56564fe0823c",
+   "INTC-10K-2026-01-23-8f030f686d0d"
+  ]
+ },
+ {
+  "question": "What licenses did the US government grant NVIDIA for H20 sales to China?",
+  "type": "1-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-2c6ba1f4d3c0"
+  ]
+ },
+ {
+  "question": "Who does AMD compete with in FPGAs and adaptive SoCs?",
+  "type": "1-hop",
+  "gold": [
+   "AMD-10K-2026-02-04-efa2d92a18d9"
+  ]
+ },
+ {
+  "question": "Who does NVIDIA compete with in networking?",
+  "type": "1-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-932408d49db8"
+  ]
+ },
+ {
+  "question": "Which game console makers use AMD semi-custom chips?",
+  "type": "1-hop",
+  "gold": [
+   "AMD-10K-2026-02-04-d2b7b4403d59",
+   "AMD-10K-2026-02-04-d298a0da3f53"
+  ]
+ },
+ {
+  "question": "What FPGA product families does AMD sell?",
+  "type": "1-hop",
+  "gold": [
+   "AMD-10K-2026-02-04-8d893de9b523",
+   "AMD-10K-2026-02-04-8461f56f46f5"
+  ]
+ },
+ {
+  "question": "Where does Intel do assembly and test?",
+  "type": "1-hop",
+  "gold": [
+   "INTC-10K-2026-01-23-148631980101",
+   "INTC-10K-2026-01-23-1b50dd4575b4"
+  ]
+ },
+ {
+  "question": "What is the production status of Intel 18A?",
+  "type": "1-hop",
+  "gold": [
+   "INTC-10K-2026-01-23-8574b31bcf69"
+  ]
+ },
+ {
+  "question": "What will Intel do if it can't win external customers for Intel 14A?",
+  "type": "1-hop",
+  "gold": [
+   "INTC-10K-2026-01-23-0fcfb8dbb58a",
+   "INTC-10K-2026-01-23-3765f34c1646",
+   "INTC-10K-2026-01-23-52b88adbc7f3",
+   "INTC-10K-2026-01-23-a69015352d23",
+   "INTC-10K-2026-01-23-5ed4489c6ad3",
+   "INTC-10K-2026-01-23-f566b840f4b5"
+  ]
+ },
+ {
+  "question": "Where is NVIDIA's supply chain concentrated?",
+  "type": "1-hop",
+  "gold": [
+   "NVDA-10K-2026-02-25-6637efa5bd47",
+   "NVDA-10K-2026-02-25-30672f53bf5c"
+  ]
+ },
+ {
+  "question": "What is Intel's strategic partnership with NVIDIA?",
+  "type": "1-hop",
+  "gold": [
+   "INTC-10K-2026-01-23-1b39bbae72b6"
+  ]
+ },
+ {
+  "question": "Which hyperscalers develop their own custom silicon that competes with Intel?",
+  "type": "1-hop",
+  "gold": [
+   "INTC-10K-2026-01-23-a3429f856909"
+  ]
+ },
+ {
+  "question": "Who performs AMD's product assembly and final testing?",
+  "type": "1-hop",
+  "gold": [
+   "AMD-10K-2026-02-04-a11347320085"
+  ]
+ },
+ {
+  "question": "What is the AMD Ryzen AI 400 PRO Series?",
+  "type": "1-hop",
+  "gold": [
+   "AMD-10K-2026-02-04-46336009fd04",
+   "AMD-10K-2026-02-04-e050d03ae97d"
+  ]
+ }
+]

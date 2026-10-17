@@ -20,9 +20,8 @@ The extractor may only emit the types below. Anything else is dropped.
 
 | Relationship | Applies when |
 |---|---|
-| (Company)-[SUPPLIES]->(Company) | The first company manufactures for, or sells components to, the second |
+| (Company)-[SUPPLIES]->(Company) | Supplier → buyer: the first makes or sells components or services for the second. Also covers "we buy from X" (no separate CUSTOMER_OF, so one fact has one form) |
 | (Company)-[COMPETES_WITH]->(Company) | The filing names the other company as a competitor |
-| (Company)-[CUSTOMER_OF]->(Company) | The first company buys from the second (a major customer is named) |
 | (Company)-[MAKES]->(Product) | The company sells the product |
 | (Product)-[TARGETS]->(Market) | The product is sold into the market |
 | (Product)-[USES]->(Technology) | The product is built on the technology |
